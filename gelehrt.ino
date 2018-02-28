@@ -50,7 +50,7 @@ void setup(){
 
     Serial.begin(9600); 
     Serial.println("Init"); 
-    P.displayText("Gelehrt", PA_CENTER, FRAME_TIME, PAUSE_TIME, PA_SCROLL_LEFT, PA_SCROLL_LEFT);
+    P.displayText("Wait", PA_CENTER, 0, 0, PA_PRINT, PA_NO_EFFECT);
 }
 
 
