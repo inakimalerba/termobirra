@@ -1,4 +1,3 @@
-
 #include <MD_Parola.h>
 #include <MD_MAX72xx.h>
 #include <SPI.h>
@@ -12,17 +11,14 @@
 #define DATA_PIN  11
 #define CS_PIN    10
 
-#define PAUSE_TIME    0
-#define FRAME_TIME    100
-
 MD_Parola P = MD_Parola(CS_PIN, MAX_DEVICES);
-
 
 // Sensor
 #define ONE_WIRE_BUS 3
 OneWire oneWire(ONE_WIRE_BUS); 
 DallasTemperature sensors(&oneWire);
 
+// Averaging variables
 const int numReadings = 10;
 float readings[numReadings] = {NULL};
 int readIndex = 0;
@@ -53,7 +49,6 @@ void setup(){
     P.displayText("Wait", PA_CENTER, 0, 0, PA_PRINT, PA_NO_EFFECT);
 }
 
-
 void loop(void)
 {
     P.displayAnimate();
@@ -78,9 +73,9 @@ ISR(TIMER1_COMPA_vect){
     if(init_ready){
         char charVal[100];
         if(average >= 100 || average <= -100){
-          dtostrf(average, 4, 1, charVal);
+            dtostrf(average, 4, 1, charVal);
         }else{
-          dtostrf(average, 4, 2, charVal);
+            dtostrf(average, 4, 2, charVal);
         }
         P.displayText(charVal, PA_CENTER, 0, 0, PA_PRINT, PA_NO_EFFECT);
     }
