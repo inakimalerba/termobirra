@@ -17,6 +17,7 @@ _Ya sabes como soy, Marge, me gusta mi cerveza fría, la TV fuerte y los homosex
 - Display is connected via SPI (D10, D11 and D13)
 - Temperature Sensor is connected to D3 port. 
 
-### Debugging.
+### Debugging
+- Temperature Sensor is connected to D2 port. 
 Serial port can be used to debug the application.
 It is set at 9600 bauds.
