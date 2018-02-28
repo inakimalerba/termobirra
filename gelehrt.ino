@@ -19,7 +19,7 @@ MD_Parola P = MD_Parola(CS_PIN, MAX_DEVICES);
 
 
 // Sensor
-#define ONE_WIRE_BUS 2 
+#define ONE_WIRE_BUS 3
 OneWire oneWire(ONE_WIRE_BUS); 
 DallasTemperature sensors(&oneWire);
 
